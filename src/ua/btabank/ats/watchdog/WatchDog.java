@@ -85,7 +85,7 @@ public class WatchDog {
 
 
     public static void sentFiles() {
-        Path pathOut = Paths.get("D:\\INFO\\GNA\\OUT\\");
+        Path pathOut = Paths.get("Z:\\INFO\\GNA\\OUT\\");
 
         WatchService watchService = null;
 
@@ -184,59 +184,59 @@ public class WatchDog {
     }
 
     public static void logFile(Date date, String s1){
-        File logPath = new File("D:\\INFO\\GNA\\ARCH\\");
+        File logPath = new File("Z:\\INFO\\GNA\\ARCH\\");
         File folder = new File(String.valueOf(logPath).concat("\\").concat(logNameFile(date)));
 
         if (!(folder.exists()) || !(folder.isDirectory())) {
 
-            new File("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            new File("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
             logMessages.put(logMessages.size()+1, s1);
-            
+
         }
         else{
 
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
             logMessages.put(logMessages.size()+1, s1);
-        }  
-        
-        
-    }
-
-    public static void logFile(Date date, String s1, String objDelete){
-        File logPath = new File("D:\\INFO\\GNA\\ARCH\\");
-        File folder = new File(String.valueOf(logPath).concat("\\").concat(logNameFile(date)));
-
-        if (!(folder.exists()) || !(folder.isDirectory())) {
-
-            new File("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
-            logMessages.put(logMessages.size()+1, s1);
-            logMessages.put(logMessages.size()+1, objDelete);
-        }
-        else{
-
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
-            logMessages.put(logMessages.size()+1, s1);
-            logMessages.put(logMessages.size()+1, objDelete);
         }
 
 
     }
 
+    public static void logFile(Date date, String s1, String objDelete){
+        File logPath = new File("Z:\\INFO\\GNA\\ARCH\\");
+        File folder = new File(String.valueOf(logPath).concat("\\").concat(logNameFile(date)));
+
+        if (!(folder.exists()) || !(folder.isDirectory())) {
+
+            new File("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
+            logMessages.put(logMessages.size()+1, s1);
+            logMessages.put(logMessages.size()+1, objDelete);
+        }
+        else{
+
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
+            logMessages.put(logMessages.size()+1, s1);
+            logMessages.put(logMessages.size()+1, objDelete);
+        }
+
+
+    }
 
 
 
-    
+
+
     public static void arrayFilesDefinition(String s) throws ArrayIndexOutOfBoundsException {
         Date date = new Date();
         if (s.contains("@F0") || s.contains("@P0")) {
 
             NewFileNameDate file = new NewFileNameDate(s, date);
             f0Files.add(new ArrayFiles(file.fileName, file.dateOfFile));
-            f0Files.get(f0Files.size() - 1).act = readFileLineByLine("D:\\INFO\\GNA\\OUT\\".concat(s));
+            f0Files.get(f0Files.size() - 1).act = readFileLineByLine("Z:\\INFO\\GNA\\OUT\\".concat(s));
             String s1 = "File " + f0Files.get(f0Files.size() - 1).name0 + " is created " + f0Files.get(f0Files.size() - 1).date0;
             logFile(date, s1);
 
@@ -394,7 +394,7 @@ public class WatchDog {
             }
 
 
-            File outFolder = new File("D:\\INFO\\GNA\\OUT\\");
+            File outFolder = new File("Z:\\INFO\\GNA\\OUT\\");
             outFolder.listFiles();
 
 

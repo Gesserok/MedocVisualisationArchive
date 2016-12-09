@@ -13,7 +13,7 @@ public class WatchDogIn {
     public static HashMap<Integer, String> inFiles = new HashMap<Integer, String>();
 
     public static void sentFiles() {
-        Path pathIn = Paths.get("D:\\INFO\\GNA\\IN\\");
+        Path pathIn = Paths.get("Z:\\INFO\\GNA\\IN\\");
 
         WatchService watchService = null;
 
@@ -107,20 +107,20 @@ public class WatchDogIn {
 
 
     public static void logFile(Date date, String s1, String objDelete){
-        File logPath = new File("D:\\INFO\\GNA\\ARCH\\");
+        File logPath = new File("Z:\\INFO\\GNA\\ARCH\\");
         File folder = new File(String.valueOf(logPath).concat("\\").concat(logNameFile(date)));
 
         if (!(folder.exists()) || !(folder.isDirectory())) {
 
-            new File("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
+            new File("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date))).mkdirs();
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
             WatchDog.logMessages.put(WatchDog.logMessages.size()+1, s1);
         }
         else{
 
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
-            write("D:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat(logNameFile(date)).concat(".txt"), s1);
+            write("Z:\\INFO\\GNA\\ARCH\\".concat(logNameFile(date)).concat("\\").concat("objDeleteLog.txt"), objDelete);
             WatchDog.logMessages.put(WatchDog.logMessages.size()+1, s1);
         }
 
@@ -357,7 +357,7 @@ public class WatchDogIn {
 
         public void run() {
 
-            File inFolder = new File("D:\\INFO\\GNA\\IN\\");
+            File inFolder = new File("Z:\\INFO\\GNA\\IN\\");
             inFolder.listFiles();
 
 
